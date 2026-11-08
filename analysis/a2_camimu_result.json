@@ -1,0 +1,26 @@
+{
+ "145719_00000": {
+  "views": 1148,
+  "pnp_rms_px_median": 0.3241172388242052,
+  "pairs_used": 111,
+  "pairs_total": 123,
+  "median_pair_rotation_deg": 30.763604023359257,
+  "best_offset_ms": 0.0,
+  "offset_within_10pct_ms": [
+   -6.0,
+   4.0
+  ],
+  "residual_median_deg": 0.79998104412597,
+  "angle_to_factory_deg": 0.6322696233955931,
+  "angle_to_factory_boot95_deg": [
+   0.4146517556612914,
+   0.8969350068700073
+  ],
+  "factory_timeshift_cam0_ms": 0.6564126498219605,
+  "gyro_bias_rad_s": [
+   0.000532632227987051,
+   -0.002130528911948204,
+   -0.000532632227987051
+  ]
+ }
+}

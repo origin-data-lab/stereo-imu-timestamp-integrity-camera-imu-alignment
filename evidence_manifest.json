@@ -1,0 +1,77 @@
+{
+  "note": 10,
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "0 dropped frames of 135498",
+      "status": "Verified (automated)",
+      "evidence": [
+        "assets/tables/a2_timestamp_integrity.csv",
+        "analysis/a2_sync_imu.py"
+      ],
+      "cross_check": "device logs report frames=N/N and STROBE drop=0 for afternoon recordings"
+    },
+    {
+      "id": "C2",
+      "claim": "stereo exposure start ≤56 µs",
+      "status": "Verified (automated)",
+      "evidence": [
+        "analysis/a2_frame_timestamps.csv.gz"
+      ]
+    },
+    {
+      "id": "C3",
+      "claim": "exposure-centre up to 1.23 ms in 124235_00003 due to per-eye exposure difference",
+      "status": "Verified (automated)",
+      "evidence": [
+        "analysis/a2_frame_timestamps.csv.gz"
+      ]
+    },
+    {
+      "id": "C4",
+      "claim": "IMU ~501.5 Hz, no sequence breaks",
+      "status": "Verified (automated)",
+      "evidence": [
+        "assets/tables/a2_timestamp_integrity.csv"
+      ]
+    },
+    {
+      "id": "C5",
+      "claim": "camera-IMU rotation 0.63° from factory; offset 0 ms",
+      "status": "Verified (automated)",
+      "evidence": [
+        "analysis/a2_camimu_result.json",
+        "assets/tables/a2_camimu_offset_curve.csv"
+      ]
+    },
+    {
+      "id": "C6",
+      "claim": "1 ms skew ≈ 1 mm at 1 m/s",
+      "status": "Interpretation (arithmetic)",
+      "evidence": []
+    },
+    {
+      "id": "C7",
+      "claim": "SEI header layout (SVH v2, 40 bytes)",
+      "status": "Interpretation (reverse-engineered, consistent with supplier sample conversion log)",
+      "evidence": [
+        "analysis/extract_frame_timestamps.py"
+      ]
+    }
+  ],
+  "inputs": {
+    "raw_files_sha256": [
+      "analysis/raw_sha256_afternoon.txt",
+      "analysis/raw_sha256_morning.txt"
+    ],
+    "environment": {
+      "python": "3.13.17",
+      "opencv": "4.10.0 (opencv-contrib-python-headless)",
+      "numpy": "2.2.6",
+      "pandas": "3.0.5",
+      "matplotlib": "3.11.2",
+      "os": "Linux x86_64 (CPU only)",
+      "analysis_date": "2026-10-26"
+    }
+  }
+}
